@@ -1,4 +1,4 @@
-# Personal Portfolio Website
+# Personal Portfolio Website [![pages-build-deployment](https://github.com/Streafe/portfolio/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/Streafe/portfolio/actions/workflows/pages/pages-build-deployment)
 
 This is my personal portfolio website, built using React.js. The website showcases my projects, skills, and background in computer science.
 
