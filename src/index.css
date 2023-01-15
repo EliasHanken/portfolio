@@ -78,9 +78,11 @@ code {
 }
 
 input[type="range"] {
-  -webkit-appearance: none;
   width: 100%;
   margin: 10px 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 input[type="range"]:focus {
   outline: none;
@@ -151,6 +153,7 @@ input[type="range"]::-ms-track {
   max-width: 60%;
   font-family: monospace;
   color: #ddd;
+  height: 8rem;
 }
 
 .spacer{
