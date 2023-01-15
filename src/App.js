@@ -10,18 +10,46 @@ import { Flip } from "react-reveal/Flip";
 import Scrollbars from "react-custom-scrollbars";
 
 function App() {
+  /**
+   * Languages
+   */
   const [python, setPython] = useState(55);
   const [javaScript, setJS] = useState(60);
   const [java, setJava] = useState(90);
-  const [linux, setLinux] = useState(80);
-  const [github, setGitHub] = useState(85);
   const [cpp, setCpp] = useState(50);
   const [csharp, setCSharp] = useState(60);
 
-  const [isVisible, setIsVisible] = useState(false);
+  /**
+   * Environments
+   */
+  const [macos, setMacOS] = useState(80);
+  const [windows, setWindows] = useState(95);
+  const [aws, setAws] = useState(50);
+  const [linux, setLinux] = useState(80);
+  const [github, setGitHub] = useState(85);
+
+  /**
+   *
+   */
+  const [react, setReact] = useState(60);
+  const [spring, setSpring] = useState(40);
+  const [flutter, setFlutter] = useState(60);
+  const [express, setExpress] = useState(70);
+  const [spigotApi, setSpigotAPI] = useState(95);
+
   const ref = useRef(null);
 
+  const [isVisible1, setIsVisible1] = useState(false);
+  const [isVisible2, setIsVisible2] = useState(false);
+  const [isVisible3, setIsVisible3] = useState(false);
+
+  const slide1Ref = useRef(null);
+  const slide2Ref = useRef(null);
+  const slide3Ref = useRef(null);
+
   const [height, setHeight] = useState(window.innerHeight);
+
+  const [sticky, setSticky] = useState(false);
 
   useEffect(() => {
     function handleResize() {
@@ -36,23 +64,75 @@ function App() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
+        if (slide1Ref.current !== null) {
+          if (entries[0].isIntersecting) {
+            setIsVisible1(true);
+          } else {
+            setIsVisible1(false);
+          }
         }
       },
       {
         root: null,
-        threshold: 0.8,
+        threshold: 0.5,
         //rootMargin: "100px 0px",
       }
     );
 
-    observer.observe(ref.current);
+    observer.observe(slide1Ref.current);
 
     return () => {
-      observer.unobserve(ref.current);
+      observer.unobserve(slide1Ref.current);
+    };
+  }, [ref]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (slide2Ref.current !== null) {
+          if (entries[0].isIntersecting) {
+            setIsVisible2(true);
+          } else {
+            setIsVisible2(false);
+          }
+        }
+      },
+      {
+        root: null,
+        threshold: 0.5,
+        //rootMargin: "100px 0px",
+      }
+    );
+
+    observer.observe(slide2Ref.current);
+
+    return () => {
+      observer.unobserve(slide2Ref.current);
+    };
+  }, [ref]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (slide3Ref.current !== null) {
+          if (entries[0].isIntersecting) {
+            setIsVisible3(true);
+          } else {
+            setIsVisible3(false);
+          }
+        }
+      },
+      {
+        root: null,
+        threshold: 0.5,
+        //rootMargin: "100px 0px",
+      }
+    );
+
+    observer.observe(slide3Ref.current);
+
+    return () => {
+      observer.unobserve(slide3Ref.current);
     };
   }, [ref]);
 
@@ -85,63 +165,215 @@ function App() {
         </div>
       )*/}
       <div
-        style={{ overflow: "auto", boxShadow: "0px 3px 15px rgba(0,0,0,0.3)" }}
+        style={{
+          overflow: "hidden",
+          //boxShadow: "0px 3px 15px rgba(0,0,0,0.3)",
+        }}
       >
-        <div ref={ref} style={{ overflowX: "hidden" }}>
-          <Fade left opposite when={isVisible}>
-            <div className="logos-container">
-              <div className="logo-container">
-                <FaPython className="logo" />
-                <CircularProgressBar
-                  value={python}
-                  onChange={(value) => setPython(value)}
-                />
-              </div>
-              <div className="logo-container">
-                <SiJavascript className="logo" />
-                <CircularProgressBar
-                  value={javaScript}
-                  onChange={(value) => setJS(value)}
-                />
-              </div>
-              <div className="logo-container">
-                <FaJava className="logo" />
-                <CircularProgressBar
-                  value={java}
-                  onChange={(value) => setJava(value)}
-                />
-              </div>
-              <div className="logo-container">
-                <VscTerminalLinux className="logo" />
-                <CircularProgressBar
-                  value={linux}
-                  onChange={(value) => setLinux(value)}
-                />
-              </div>
-              <div className="logo-container">
-                <VscGithubInverted className="logo" />
-                <CircularProgressBar
-                  value={github}
-                  onChange={(value) => setGitHub(value)}
-                />
-              </div>
-              <div className="logo-container">
-                <Icon className="logo" icon="mdi:language-cpp" />
-                <CircularProgressBar
-                  value={cpp}
-                  onChange={(value) => setCpp(value)}
-                />
-              </div>
-              <div className="logo-container">
-                <Icon className="logo" icon="mdi:language-csharp" />
-                <CircularProgressBar
-                  value={csharp}
-                  onChange={(value) => setCSharp(value)}
-                />
+        <div ref={slide1Ref} style={{}}>
+          <Fade left opposite when={isVisible1}>
+            <div>
+              <p className="logos-container-text">Languages</p>
+              <div className="logos-container">
+                <div>
+                  <div className="logo-container">
+                    <Icon
+                      className="logo"
+                      icon="vscode-icons:file-type-python"
+                    />
+                    <CircularProgressBar
+                      value={python}
+                      onChange={(value) => setPython(value)}
+                    />
+                  </div>
+                  <p>Python</p>
+                </div>
+                <div>
+                  <div className="logo-container">
+                    <Icon
+                      className="logo"
+                      icon="vscode-icons:file-type-js-official"
+                    />
+                    <CircularProgressBar
+                      value={javaScript}
+                      onChange={(value) => setJS(value)}
+                    />
+                  </div>
+                  <p>Javascript</p>
+                </div>
+                <div>
+                  <div className="logo-container">
+                    <Icon className="logo" icon="logos:java" />
+                    <CircularProgressBar
+                      value={java}
+                      onChange={(value) => setJava(value)}
+                    />
+                  </div>
+                  <p>Java</p>
+                </div>
+
+                <div>
+                  <div className="logo-container">
+                    <Icon className="logo" icon="mdi:language-cpp" />
+                    <CircularProgressBar
+                      value={cpp}
+                      onChange={(value) => setCpp(value)}
+                    />
+                  </div>
+                  <p>C++</p>
+                </div>
+                <div>
+                  <div className="logo-container">
+                    <Icon className="logo" icon="mdi:language-csharp" />
+                    <CircularProgressBar
+                      value={csharp}
+                      onChange={(value) => setCSharp(value)}
+                    />
+                  </div>
+                  <p>C#</p>
+                </div>
+                <div>
+                  <div className="logo-container">
+                    <Icon
+                      className="logo"
+                      icon="vscode-icons:file-type-dartlang"
+                    />
+                    <CircularProgressBar
+                      value={csharp}
+                      onChange={(value) => setCSharp(value)}
+                    />
+                  </div>
+                  <p>Dart</p>
+                </div>
               </div>
             </div>
           </Fade>
         </div>
+        <div ref={slide2Ref} style={{}}>
+          <Fade left opposite when={isVisible2}>
+            <div>
+              <p className="logos-container-text">Environments</p>
+              <div className="logos-container">
+                <div>
+                  <div className="logo-container">
+                    <Icon className="logo" icon="logos:github-icon" />
+                    <CircularProgressBar
+                      value={github}
+                      onChange={(value) => setGitHub(value)}
+                    />
+                  </div>
+                  <p>Git</p>
+                </div>
+                <div>
+                  <div className="logo-container">
+                    <Icon className="logo" icon="logos:microsoft-windows" />
+                    <CircularProgressBar
+                      value={windows}
+                      onChange={(value) => setWindows(value)}
+                    />
+                  </div>
+                  <p>Windows</p>
+                </div>
+                <div>
+                  <div className="logo-container">
+                    <Icon
+                      className="logo"
+                      icon="vscode-icons:folder-type-macos"
+                    />
+                    <CircularProgressBar
+                      value={macos}
+                      onChange={(value) => setMacOS(value)}
+                    />
+                  </div>
+                  <p>MacOS</p>
+                </div>
+                <div>
+                  <div className="logo-container">
+                    <Icon className="logo" icon="uil:linux" />
+                    <CircularProgressBar
+                      value={linux}
+                      onChange={(value) => setLinux(value)}
+                    />
+                  </div>
+                  <p>Linux</p>
+                </div>
+                <div>
+                  <div className="logo-container">
+                    <Icon className="logo" icon="skill-icons:aws-light" />
+                    <CircularProgressBar
+                      value={aws}
+                      onChange={(value) => setAws(value)}
+                    />
+                  </div>
+                  <p>AWS</p>
+                </div>
+              </div>
+            </div>
+          </Fade>
+        </div>
+        <div ref={slide3Ref} style={{}}>
+          <Fade left opposite when={isVisible3}>
+            <div>
+              <p className="logos-container-text">Frameworks</p>
+              <div className="logos-container">
+                <div>
+                  <div className="logo-container">
+                    <Icon
+                      className="logo"
+                      icon="vscode-icons:file-type-reactts"
+                    />
+                    <CircularProgressBar
+                      value={react}
+                      onChange={(value) => setReact(value)}
+                    />
+                  </div>
+                  <p>React</p>
+                </div>
+                <div>
+                  <div className="logo-container">
+                    <Icon className="logo" icon="logos:spring-icon" />
+                    <CircularProgressBar
+                      value={spring}
+                      onChange={(value) => setSpring(value)}
+                    />
+                  </div>
+                  <p>Spring</p>
+                </div>
+                <div>
+                  <div className="logo-container">
+                    <Icon className="logo" icon="logos:flutter" />
+                    <CircularProgressBar
+                      value={flutter}
+                      onChange={(value) => setFlutter(value)}
+                    />
+                  </div>
+                  <p>Flutter</p>
+                </div>
+                <div>
+                  <div className="logo-container">
+                    <Icon className="logo" icon="vscode-icons:file-type-node" />
+                    <CircularProgressBar
+                      value={express}
+                      onChange={(value) => setExpress(value)}
+                    />
+                  </div>
+                  <p>Node.js</p>
+                </div>
+                <div>
+                  <div className="logo-container">
+                    <Icon className="logo" icon="carbon:api-1" />
+                    <CircularProgressBar
+                      value={spigotApi}
+                      onChange={(value) => setSpigotAPI(value)}
+                    />
+                  </div>
+                  <p>Spigot API</p>
+                </div>
+              </div>
+            </div>
+          </Fade>
+        </div>
+        <p className="logos-container-text"></p>
       </div>
       <CustomScrollbar />
     </div>

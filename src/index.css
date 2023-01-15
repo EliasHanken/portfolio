@@ -25,10 +25,17 @@ code {
   align-items: center;
   align-items: center;
   margin: 0 auto;
-  box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   height: 8rem;
   max-width: 70%;
   transition: height 0.5s ease;
+}
+
+.logos-container-text{
+  font-family: monospace;
+  color: rgb(0, 0, 0);
+  font-size: 1.4rem;
+  height: 2rem;
 }
 
 .logo-container {
@@ -161,6 +168,13 @@ input[type="range"]::-ms-track {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+}
+
+.sticky {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Media Section */
