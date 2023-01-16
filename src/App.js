@@ -8,6 +8,7 @@ import { Icon } from "@iconify/react";
 import { Fade } from "react-reveal";
 import { Flip } from "react-reveal/Flip";
 import Scrollbars from "react-custom-scrollbars";
+import Navbar from "./components/Navbar";
 
 function App() {
   /**
@@ -138,9 +139,10 @@ function App() {
 
   return (
     <div className="home-page">
-      <div className="type-animation-div" style={{ height: height }}>
+      <Navbar />
+      <div className="type-animation-div text" style={{ height: height }}>
         <TypeAnimation
-          className="type-animation"
+          className="type-animation text"
           speed={50}
           sequence={[
             "Hello, my name is Elias and I am a full-stack developer.", // Types 'One'
@@ -173,7 +175,7 @@ function App() {
         <div ref={slide1Ref} style={{}}>
           <Fade left opposite when={isVisible1}>
             <div>
-              <p className="logos-container-text">Languages</p>
+              <p className="logos-container-text text">Languages</p>
               <div className="logos-container">
                 <div>
                   <div className="logo-container">
@@ -186,7 +188,7 @@ function App() {
                       onChange={(value) => setPython(value)}
                     />
                   </div>
-                  <p>Python</p>
+                  <p className="text">Python</p>
                 </div>
                 <div>
                   <div className="logo-container">
@@ -199,7 +201,7 @@ function App() {
                       onChange={(value) => setJS(value)}
                     />
                   </div>
-                  <p>Javascript</p>
+                  <p className="text">Javascript</p>
                 </div>
                 <div>
                   <div className="logo-container">
@@ -209,7 +211,7 @@ function App() {
                       onChange={(value) => setJava(value)}
                     />
                   </div>
-                  <p>Java</p>
+                  <p className="text">Java</p>
                 </div>
 
                 <div>
@@ -220,7 +222,7 @@ function App() {
                       onChange={(value) => setCpp(value)}
                     />
                   </div>
-                  <p>C++</p>
+                  <p className="text">C++</p>
                 </div>
                 <div>
                   <div className="logo-container">
@@ -230,7 +232,7 @@ function App() {
                       onChange={(value) => setCSharp(value)}
                     />
                   </div>
-                  <p>C#</p>
+                  <p className="text">C#</p>
                 </div>
                 <div>
                   <div className="logo-container">
@@ -243,7 +245,7 @@ function App() {
                       onChange={(value) => setCSharp(value)}
                     />
                   </div>
-                  <p>Dart</p>
+                  <p className="text">Dart</p>
                 </div>
               </div>
             </div>
@@ -262,7 +264,7 @@ function App() {
                       onChange={(value) => setGitHub(value)}
                     />
                   </div>
-                  <p>Git</p>
+                  <p className="text">Git</p>
                 </div>
                 <div>
                   <div className="logo-container">
@@ -272,7 +274,7 @@ function App() {
                       onChange={(value) => setWindows(value)}
                     />
                   </div>
-                  <p>Windows</p>
+                  <p className="text">Windows</p>
                 </div>
                 <div>
                   <div className="logo-container">
@@ -285,7 +287,7 @@ function App() {
                       onChange={(value) => setMacOS(value)}
                     />
                   </div>
-                  <p>MacOS</p>
+                  <p className="text">MacOS</p>
                 </div>
                 <div>
                   <div className="logo-container">
@@ -295,7 +297,7 @@ function App() {
                       onChange={(value) => setLinux(value)}
                     />
                   </div>
-                  <p>Linux</p>
+                  <p className="text">Linux</p>
                 </div>
                 <div>
                   <div className="logo-container">
@@ -305,7 +307,7 @@ function App() {
                       onChange={(value) => setAws(value)}
                     />
                   </div>
-                  <p>AWS</p>
+                  <p className="text">AWS</p>
                 </div>
               </div>
             </div>
@@ -327,7 +329,7 @@ function App() {
                       onChange={(value) => setReact(value)}
                     />
                   </div>
-                  <p>React</p>
+                  <p className="text">React</p>
                 </div>
                 <div>
                   <div className="logo-container">
@@ -337,7 +339,7 @@ function App() {
                       onChange={(value) => setSpring(value)}
                     />
                   </div>
-                  <p>Spring</p>
+                  <p className="text">Spring</p>
                 </div>
                 <div>
                   <div className="logo-container">
@@ -347,7 +349,7 @@ function App() {
                       onChange={(value) => setFlutter(value)}
                     />
                   </div>
-                  <p>Flutter</p>
+                  <p className="text">Flutter</p>
                 </div>
                 <div>
                   <div className="logo-container">
@@ -357,7 +359,7 @@ function App() {
                       onChange={(value) => setExpress(value)}
                     />
                   </div>
-                  <p>Node.js</p>
+                  <p className="text">Node.js</p>
                 </div>
                 <div>
                   <div className="logo-container">
@@ -367,7 +369,7 @@ function App() {
                       onChange={(value) => setSpigotAPI(value)}
                     />
                   </div>
-                  <p>Spigot API</p>
+                  <p className="text">Spigot API</p>
                 </div>
               </div>
             </div>
