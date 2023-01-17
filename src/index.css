@@ -47,7 +47,7 @@ code {
 
 .logo {
   font-size: 48px;
-  color: rgb(0, 0, 0);
+  color: #ddd;
   position: relative;
   z-index: 1;
   transition: font-size 0.5s ease;
@@ -83,6 +83,14 @@ code {
 .progress-ring, .progress-ring-bg, .progress-ring-fg {
   transition: all 0.5s ease;
 }
+
+.about-section{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+
 
 input[type="range"] {
   width: 100%;
@@ -154,6 +162,7 @@ input[type="range"]::-ms-track {
   align-items: center;
   margin: 0 auto;
   /*height: 20rem;*/
+  text-align: center;
 }
 
 .type-animation{
@@ -181,6 +190,11 @@ input[type="range"]::-ms-track {
   transition: color 250ms ease-in-out;
 }
 
+.about-text{
+  font-size: 1.4rem;
+
+}
+
 /* Media Section */
 
 @media (max-width: 500px){
@@ -192,7 +206,7 @@ input[type="range"]::-ms-track {
     max-width: 80%;
   }
   .type-animation{
-    max-width: 70%;
+    max-width: 80%;
     font-family: monospace;
     color: #ddd;
   }

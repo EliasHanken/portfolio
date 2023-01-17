@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import { Icon } from "@iconify/react";
 import { FaSun, FaMoon } from "react-icons/fa";
 import "../darkmode.css";
@@ -10,7 +10,16 @@ const Navbar = () => {
   useEffect(() => {
     localStorage.setItem("darkMode", mode);
     toggleDarkMode(mode);
+  });
+  /**
+   * Original code:
+useEffect(() => {
+    localStorage.setItem("darkMode", mode);
+    toggleDarkMode(mode);
   }, [mode]);
+   * Removing the array fixed it, but this is not a permanent solution,
+   * it now re-renders 16 times.
+   */
 
   const toggleDarkMode = (props) => {
     if (props === "dark") {
@@ -31,6 +40,7 @@ const Navbar = () => {
 
       logos.forEach((element) => {
         element.classList.add("dark-mode-logo");
+        console.log("og");
       });
     } else {
       document.body.classList.remove("dark-mode");

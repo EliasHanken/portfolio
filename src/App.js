@@ -5,8 +5,7 @@ import { VscTerminalLinux, VscGithubInverted } from "react-icons/vsc";
 import { SiJavascript } from "react-icons/si";
 import { TypeAnimation } from "react-type-animation";
 import { Icon } from "@iconify/react";
-import { Fade } from "react-reveal";
-import { Flip } from "react-reveal/Flip";
+import { Fade, Zoom, Flip } from "react-reveal";
 import Scrollbars from "react-custom-scrollbars";
 import Navbar from "./components/Navbar";
 
@@ -43,10 +42,13 @@ function App() {
   const [isVisible1, setIsVisible1] = useState(false);
   const [isVisible2, setIsVisible2] = useState(false);
   const [isVisible3, setIsVisible3] = useState(false);
+  const [isVisibleAbout, setVisibleAbout] = useState(false);
 
   const slide1Ref = useRef(null);
   const slide2Ref = useRef(null);
   const slide3Ref = useRef(null);
+
+  const aboutRef = useRef(null);
 
   const [height, setHeight] = useState(window.innerHeight);
 
@@ -61,6 +63,31 @@ function App() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (aboutRef.current !== null) {
+          if (entries[0].isIntersecting) {
+            setVisibleAbout(true);
+          } else {
+            setVisibleAbout(false);
+          }
+        }
+      },
+      {
+        root: null,
+        threshold: 0.5,
+        //rootMargin: "100px 0px",
+      }
+    );
+
+    observer.observe(aboutRef.current);
+
+    return () => {
+      observer.unobserve(aboutRef.current);
+    };
+  }, [ref]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -143,7 +170,6 @@ function App() {
       <div className="type-animation-div text" style={{ height: height }}>
         <TypeAnimation
           className="type-animation text"
-          speed={60}
           sequence={[
             "Hello, my name is Elias and I am a full-stack developer.", // Types 'One'
             4000, // Waits 1s
@@ -153,6 +179,7 @@ function App() {
           wrapper="div"
           cursor={true}
           repeat={Infinity}
+          speed={65}
           style={{
             fontSize: "2em",
           }}
@@ -166,6 +193,39 @@ function App() {
           This div will appear and disappear based on the user's scroll position
         </div>
       )*/}
+      <div
+        style={{ overflow: "hidden", height: height }}
+        className="about-section"
+      >
+        <div ref={aboutRef}>
+          <Fade left opposite when={isVisibleAbout}>
+            <div className="type-animation-div text">
+              <p
+                className="type-animation text about-text"
+                style={{ height: height }}
+              >
+                "I am currently a full-stack software engineer student set to
+                graduate in 2023. Throughout my studies, I have gained a strong
+                foundation in various programming languages such as Java,
+                Python, C++, .NET, and JavaScript, and I am proficient in
+                various front-end and back-end frameworks."
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                Technical skills
+                <br />
+                <Icon
+                  icon="material-symbols:keyboard-double-arrow-down-rounded"
+                  width="36"
+                  height="36"
+                />
+              </p>
+            </div>
+          </Fade>
+        </div>
+      </div>
       <div
         style={{
           overflow: "hidden",

@@ -66,6 +66,10 @@ body{
     stroke: rgba(191, 199, 216, 0.61);
 }
 
+.light-mode-logo{
+    color: rgb(7, 7, 7);
+}
+
 .dark-mode-logo{
     color: #ddd;
 }
