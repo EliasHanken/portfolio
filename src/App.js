@@ -389,10 +389,10 @@ const Spacer = ({ size }) => {
 const CircularProgressBar = ({ value, onChange }) => {
   const [localValue, setLocalValue] = useState(value);
   const [strokeDashoffset, setStrokeDashoffset] = useState(
-    `calc(280 - (280 * 100 * 0.01))`
+    280 - 280 * 100 * 0.01
   );
   useEffect(() => {
-    setStrokeDashoffset(`calc(280 - (280 * ${localValue} * 0.01))`);
+    setStrokeDashoffset(280 - 280 * localValue * 0.01);
   }, [localValue]);
 
   const color = `rgb(${255 - localValue * 2.55}, ${localValue * 2.55}, ${
