@@ -27,7 +27,7 @@ code {
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   height: 8rem;
   max-width: 70%;
-  transition: height 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .logos-container-text{
@@ -197,7 +197,7 @@ input[type="range"]::-ms-track {
 
 /* Media Section */
 
-@media (max-width: 500px){
+@media (max-width: 499px){
   .logo{
     font-size: 35px;
   }
@@ -212,7 +212,7 @@ input[type="range"]::-ms-track {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 499px) {
   .progress-ring {
     width: 75px;
     height: 75px;
@@ -226,65 +226,74 @@ input[type="range"]::-ms-track {
   }
 }
 
-@media (max-width: 675px) and (min-width: 501px){
+@media (max-width: 675px) and (min-width: 500px){
+  .logo{
+    font-size: 40px;
+  }
+  .logos-container{
+    height: 30rem;
+  }
+}
+
+@media (max-width: 675px) and (min-width: 500px){
+  .progress-ring {
+    width: 80px;
+    height: 80px;
+  }
+  .progress-ring-bg {
+    stroke-width: 4px;
+  }
+
+  .progress-ring-fg{
+    stroke-width: 5px;
+  }
+}
+
+@media (min-width: 676px) and (max-width: 850px){
   .logo{
     font-size: 45px;
   }
   .logos-container{
-    height: 14rem;
+    height: 25rem;
   }
 }
 
-@media (max-width: 675px) and (min-width: 501px){
+@media (min-width: 676px) and (max-width: 850px){
+  .progress-ring {
+    width: 85px;
+    height: 85px;
+  }
+  .progress-ring-bg {
+    stroke-width: 4px;
+  }
+
+  .progress-ring-fg{
+    stroke-width: 5px;
+  }
+}
+
+@media (min-width: 851px) {
+  .logo{
+    font-size: 50px;
+  }
+  .logos-container{
+    height: 28rem;
+  }
+  .about-text{
+    font-size: 1.85rem;
+  }
+  .type-animation-div{
+    font-size: 1rem;
+  }
+  .logos-container-text{
+    font-size: 1.85rem;
+  }
+}
+
+@media (min-width: 851px){
   .progress-ring {
     width: 90px;
     height: 90px;
-  }
-  .progress-ring-bg {
-    stroke-width: 4px;
-  }
-
-  .progress-ring-fg{
-    stroke-width: 5px;
-  }
-}
-
-@media (min-width: 676px) and (max-width: 850px){
-  .logo{
-    font-size: 55px;
-  }
-  .logos-container{
-    height: 18rem;
-  }
-}
-
-@media (min-width: 676px) and (max-width: 850px){
-  .progress-ring {
-    width: 100px;
-    height: 100px;
-  }
-  .progress-ring-bg {
-    stroke-width: 4px;
-  }
-
-  .progress-ring-fg{
-    stroke-width: 5px;
-  }
-}
-
-@media (min-width: 851px){
-  .logo{
-    font-size: 55px;
-  }
-  .logos-container{
-    height: 18rem;
-  }
-}
-
-@media (min-width: 851px){
-  .progress-ring {
-    width: 100px;
-    height: 100px;
   }
   .progress-ring-bg {
     stroke-width: 4px;
