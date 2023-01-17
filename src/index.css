@@ -51,6 +51,7 @@ code {
   position: relative;
   z-index: 1;
   transition: font-size 0.5s ease;
+  transition: color 250ms ease-in-out;
 }
 
 
@@ -174,6 +175,10 @@ input[type="range"]::-ms-track {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.text{
+  transition: color 250ms ease-in-out;
 }
 
 /* Media Section */

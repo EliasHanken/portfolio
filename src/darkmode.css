@@ -14,8 +14,8 @@
   
 
 .progress-ring-bg {
-    stroke: #ddd;
-  }
+    stroke: rgba(33, 34, 36, 0.068);
+}
 
 input[type="range"]::-webkit-slider-runnable-track {
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
@@ -42,16 +42,15 @@ input[type="range"]::-webkit-slider-thumb {
     color: #ddd;
   }
 
+
 body{
     transition: background-color 250ms ease-in-out;
-    /* background: linear-gradient(to right, #F5F7FA, #B8C6DB); */
+    /*background-image: linear-gradient(to right, #E5BDF6, #D8DEDE);*/
     background-color: #d6dade;
 }
 
 .dark-mode{
-    /* 
-    background: linear-gradient(to right, #28313B, #485461); 
-    */
+    /*background: linear-gradient(to right, #09203F, #537895);*/
     background-color: #26272a;
 }
 
@@ -61,6 +60,14 @@ body{
 
 .light-mode-font{
     color: #26272a;
+}
+
+.dark-mode-progress-ring-bg {
+    stroke: rgba(191, 199, 216, 0.61);
+}
+
+.dark-mode-logo{
+    color: #ddd;
 }
 
   

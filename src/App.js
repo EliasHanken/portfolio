@@ -143,7 +143,7 @@ function App() {
       <div className="type-animation-div text" style={{ height: height }}>
         <TypeAnimation
           className="type-animation text"
-          speed={50}
+          speed={60}
           sequence={[
             "Hello, my name is Elias and I am a full-stack developer.", // Types 'One'
             4000, // Waits 1s
@@ -254,11 +254,11 @@ function App() {
         <div ref={slide2Ref} style={{}}>
           <Fade left opposite when={isVisible2}>
             <div>
-              <p className="logos-container-text">Environments</p>
+              <p className="logos-container-text text">Environments</p>
               <div className="logos-container">
                 <div>
                   <div className="logo-container">
-                    <Icon className="logo" icon="logos:github-icon" />
+                    <Icon className="logo" icon="mdi:github" />
                     <CircularProgressBar
                       value={github}
                       onChange={(value) => setGitHub(value)}
@@ -316,7 +316,7 @@ function App() {
         <div ref={slide3Ref} style={{}}>
           <Fade left opposite when={isVisible3}>
             <div>
-              <p className="logos-container-text">Frameworks</p>
+              <p className="logos-container-text text">Frameworks</p>
               <div className="logos-container">
                 <div>
                   <div className="logo-container">
@@ -388,7 +388,17 @@ const Spacer = ({ size }) => {
 
 const CircularProgressBar = ({ value, onChange }) => {
   const [localValue, setLocalValue] = useState(value);
-  const color = `rgb(${255 - localValue * 2.55}, ${localValue * 2.55}, 50)`;
+  const [strokeDashoffset, setStrokeDashoffset] = useState(
+    `calc(280 - (280 * 100 * 0.01))`
+  );
+  useEffect(() => {
+    setStrokeDashoffset(`calc(280 - (280 * ${localValue} * 0.01))`);
+  }, [localValue]);
+
+  const color = `rgb(${255 - localValue * 2.55}, ${localValue * 2.55}, ${
+    255 - localValue * 1
+  })`;
+
   return (
     <div className="progress-ring">
       <svg viewBox="0 0 100 100">
@@ -399,7 +409,7 @@ const CircularProgressBar = ({ value, onChange }) => {
           cy="50"
           r="45"
           strokeDasharray="280"
-          strokeDashoffset={`calc(280 - (280 * ${localValue} * 0.01))`}
+          strokeDashoffset={strokeDashoffset}
           stroke={color}
         ></circle>
       </svg>
