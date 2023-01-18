@@ -195,6 +195,35 @@ input[type="range"]::-ms-track {
 
 }
 
+:root {
+  --drop-height: 1rem;
+  --logo-size: 38px;
+  --offset: 50px;
+  --shadow-height: 8px;
+  --duration: 0.6s;
+}
+
+@keyframes bounce {
+  from { 
+    transform: translateY(0) scale(1);
+  }
+  to   { 
+    transform: translateY(var(--drop-height)) scale(1, 0.8);
+  }
+}
+
+.about-arrow-down{
+  width: var(--logo-size);
+  height: var(--logo-size);
+
+
+  animation-name: bounce;
+  animation-duration: var(--duration);
+  animation-direction: alternate;
+
+  animation-iteration-count: infinite;
+}
+
 /* Media Section */
 
 @media (max-width: 499px){

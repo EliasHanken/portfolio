@@ -31,11 +31,12 @@ function App() {
   /**
    *
    */
-  const [react, setReact] = useState(60);
-  const [spring, setSpring] = useState(40);
+  const [react, setReact] = useState(70);
+  const [spring, setSpring] = useState(75);
   const [flutter, setFlutter] = useState(60);
   const [express, setExpress] = useState(70);
   const [spigotApi, setSpigotAPI] = useState(95);
+  const [electron, setElectron] = useState(70);
 
   const ref = useRef(null);
 
@@ -220,6 +221,8 @@ function App() {
                   icon="material-symbols:keyboard-double-arrow-down-rounded"
                   width="36"
                   height="36"
+                  className="about-arrow-down"
+                  style={{ padding: "1rem" }}
                 />
               </p>
             </div>
@@ -430,6 +433,16 @@ function App() {
                     />
                   </div>
                   <p className="text">Spigot API</p>
+                </div>
+                <div>
+                  <div className="logo-container">
+                    <Icon className="logo" icon="mdi:electron-framework" />
+                    <CircularProgressBar
+                      value={electron}
+                      onChange={(value) => setElectron(value)}
+                    />
+                  </div>
+                  <p className="text">Electron</p>
                 </div>
               </div>
             </div>
