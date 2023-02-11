@@ -9,6 +9,8 @@ import { Fade, Zoom, Flip } from "react-reveal";
 import Scrollbars from "react-custom-scrollbars";
 import Navbar from "./components/Navbar";
 
+import Projects from "./components/projects";
+
 function App() {
   /**
    * Languages
@@ -44,12 +46,15 @@ function App() {
   const [isVisible2, setIsVisible2] = useState(false);
   const [isVisible3, setIsVisible3] = useState(false);
   const [isVisibleAbout, setVisibleAbout] = useState(false);
+  const [isVisibleProjects, setisVisibleProjects] = useState(false);
 
   const slide1Ref = useRef(null);
   const slide2Ref = useRef(null);
   const slide3Ref = useRef(null);
 
   const aboutRef = useRef(null);
+
+  const projectsRef = useRef(null);
 
   const [height, setHeight] = useState(window.innerHeight);
 
@@ -162,6 +167,31 @@ function App() {
 
     return () => {
       observer.unobserve(slide3Ref.current);
+    };
+  }, [ref]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (projectsRef.current !== null) {
+          if (entries[0].isIntersecting) {
+            setisVisibleProjects(true);
+          } else {
+            setisVisibleProjects(false);
+          }
+        }
+      },
+      {
+        root: null,
+        threshold: 0.5,
+        //rootMargin: "100px 0px",
+      }
+    );
+
+    observer.observe(projectsRef.current);
+
+    return () => {
+      observer.unobserve(projectsRef.current);
     };
   }, [ref]);
 
@@ -449,6 +479,15 @@ function App() {
           </Fade>
         </div>
         <p className="logos-container-text"></p>
+        <div ref={projectsRef}>
+          <Fade left opposite when={isVisibleProjects}>
+            <div>
+              <p className="logos-container-text text">Projects</p>
+              <p>Full Stack</p>
+              <Projects />
+            </div>
+          </Fade>
+        </div>
       </div>
       <CustomScrollbar />
     </div>

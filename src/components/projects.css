@@ -1,0 +1,33 @@
+.projects-div {
+  color: white;
+  display: flex;
+  width: 30rem;
+  height: 40rem;
+  margin: 0 auto;
+}
+
+.projects-div ul {
+  list-style-type: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+.projects-div img {
+  width: 5rem;
+  filter: invert();
+}
+
+.link-text-project {
+  color: white;
+  text-decoration: none;
+}
+
+.project-logo-tech {
+  padding: 1rem;
+  font-size: 48px;
+  color: #ddd;
+  position: relative;
+  z-index: 1;
+  transition: font-size 0.5s ease;
+  transition: color 250ms ease-in-out;
+}

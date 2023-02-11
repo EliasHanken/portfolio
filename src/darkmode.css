@@ -1,77 +1,69 @@
-
 .logos-container {
-    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
-  }
-  
-.logos-container-text{
-    color: rgb(0, 0, 0);
-  }
-  
-  
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logos-container-text {
+  color: rgb(0, 0, 0);
+}
+
 .logo {
-    color: rgb(0, 0, 0);
-  }
-  
+  color: rgb(0, 0, 0);
+}
 
 .progress-ring-bg {
-    stroke: rgba(33, 34, 36, 0.068);
+  stroke: rgba(33, 34, 36, 0.068);
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    background: #3071a9;
-    border: 0.2px solid #010101;
-  }
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border: 0.2px solid #010101;
+}
 input[type="range"]::-webkit-slider-thumb {
-    background: #ffffff;
-  }
-  input[type="range"]:focus::-webkit-slider-runnable-track {
-    background: #367ebd;
-  }
-  input[type="range"]::-moz-range-track {
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    background: #3071a9;
-
-  }
-  input[type="range"]::-moz-range-thumb {
-    background: #ffffff;
-  }
-
-
-  .type-animation{
-    color: #ddd;
-  }
-
-
-body{
-    transition: background-color 250ms ease-in-out;
-    /*background-image: linear-gradient(to right, #E5BDF6, #D8DEDE);*/
-    background-color: #d6dade;
+  background: #ffffff;
+}
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
+}
+input[type="range"]::-moz-range-track {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+}
+input[type="range"]::-moz-range-thumb {
+  background: #ffffff;
 }
 
-.dark-mode{
-    /*background: linear-gradient(to right, #09203F, #537895);*/
-    background-color: #26272a;
+.type-animation {
+  color: #ddd;
 }
 
-.dark-mode-font{
-    color: #d6dade;
+body {
+  transition: background-color 250ms ease-in-out;
+  /*background-image: linear-gradient(to right, #E5BDF6, #D8DEDE);*/
+  background-color: #d6dade;
 }
 
-.light-mode-font{
-    color: #26272a;
+.dark-mode {
+  /*background: linear-gradient(to right, #09203F, #537895);*/
+  background-color: #26272a;
+}
+
+.dark-mode-font {
+  color: #d6dade;
+}
+
+.light-mode-font {
+  color: #26272a;
 }
 
 .dark-mode-progress-ring-bg {
-    stroke: rgba(191, 199, 216, 0.61);
+  stroke: rgba(191, 199, 216, 0.61);
 }
 
-.light-mode-logo{
-    color: rgb(7, 7, 7);
+.light-mode-logo {
+  color: rgb(7, 7, 7);
 }
 
-.dark-mode-logo{
-    color: #ddd;
+.dark-mode-logo {
+  color: black;
 }
-
-  
