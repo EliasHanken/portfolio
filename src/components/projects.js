@@ -18,6 +18,21 @@ const projects = [
       "simple-icons:openai",
     ],
   },
+  {
+    title: "Social Network App",
+    description:
+      "A social network app with a focus on the backend, built with Node.js, Express, MongoDB, and Mongoose.",
+    image:
+      "https://seeklogo.com/images/O/open-ai-logo-8B9BFEDC26-seeklogo.com.png",
+    link: "https://streafe.github.io/social-fitness/",
+    tech: [
+      "vscode-icons:file-type-node",
+      "logos:mongodb",
+      "logos:cloudinary",
+      "vscode-icons:file-type-vite",
+      "skill-icons:javascript",
+    ],
+  },
 ];
 
 const Projects = () => (
@@ -29,9 +44,7 @@ const Projects = () => (
           <p>{project.description}</p>
           <a href={project.link} target="_blank" rel="noopener noreferrer">
             <img src={project.image} alt={project.title} />
-            <p className="link-text-project">
-              https://streafe.github.io/dalle-clone/
-            </p>
+            <p className="link-text-project">{project.link}</p>
             <div className="icons-container">
               {project.tech.map((icon, i) => (
                 <Icon key={i} className="project-logo-tech" icon={icon} />
