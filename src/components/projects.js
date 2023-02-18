@@ -22,15 +22,13 @@ const projects = [
     title: "Social Network App",
     description:
       "A social network app with a focus on the backend, built with Node.js, Express, MongoDB, and Mongoose.",
-    image:
-      "https://seeklogo.com/images/O/open-ai-logo-8B9BFEDC26-seeklogo.com.png",
+    image: "https://cdn-icons-png.flaticon.com/512/2327/2327636.png",
     link: "https://streafe.github.io/social-fitness/",
     tech: [
       "vscode-icons:file-type-node",
       "logos:mongodb",
-      "logos:cloudinary",
-      "vscode-icons:file-type-vite",
       "skill-icons:javascript",
+      "skill-icons:tailwindcss-dark",
     ],
   },
 ];
